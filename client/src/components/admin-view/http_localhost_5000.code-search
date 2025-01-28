@@ -1,0 +1,138 @@
+# Query: http://localhost:5000
+# Flags: CaseSensitive WordMatch RegExp
+# ContextLines: 1
+
+31 results - 11 files
+
+client\.env:
+  1: VITE_API_URL=http://localhost:5000
+
+client\src\store\admin\order-slice\index.js:
+  12      const response = await axios.get(
+  13:       `${import.meta.env.VITE_API_URL}/api/admin/orders/get`
+  14      );
+
+  23      const response = await axios.get(
+  24:       `${import.meta.env.VITE_API_URL}/api/admin/orders/details/${id}`
+  25      );
+
+  34      const response = await axios.put(
+  35:       `${import.meta.env.VITE_API_URL}/api/admin/orders/update/${id}`,
+  36        {
+
+client\src\store\admin\products-slice\index.js:
+  12      const result = await axios.post(
+  13:       `${import.meta.env.VITE_API_URL}/api/admin/products/add`,
+  14        formData,
+
+  29      const result = await axios.get(
+  30:       `${import.meta.env.VITE_API_URL}/api/admin/products/get`
+  31      );
+
+  40      const result = await axios.put(
+  41:       `${import.meta.env.VITE_API_URL}/api/admin/products/edit/${id}`,
+  42        formData,
+
+  57      const result = await axios.delete(
+  58:       `${import.meta.env.VITE_API_URL}/api/admin/products/delete/${id}`
+  59      );
+
+client\src\store\auth-slice\index.js:
+  14      const response = await axios.post(
+  15:       `${import.meta.env.VITE_API_URL}/api/auth/register`,
+  16        formData,
+
+  30      const response = await axios.post(
+  31:       `${import.meta.env.VITE_API_URL}/api/auth/login`,
+  32        formData,
+
+  46      const response = await axios.post(
+  47:       `${import.meta.env.VITE_API_URL}/api/auth/logout`,
+  48        {},
+
+  62      const response = await axios.get(
+  63:       `${import.meta.env.VITE_API_URL}/api/auth/check-auth`,
+  64        {
+
+client\src\store\common-slice\index.js:
+  12      const response = await axios.get(
+  13:       `${import.meta.env.VITE_API_URL}/api/common/feature/get`
+  14      );
+
+  23      const response = await axios.post(
+  24:       `${import.meta.env.VITE_API_URL}/api/common/feature/add`,
+  25        { image }
+
+client\src\store\shop\address-slice\index.js:
+  12      const response = await axios.post(
+  13:       `${import.meta.env.VITE_API_URL}/api/shop/address/add`,
+  14        formData
+
+  24      const response = await axios.get(
+  25:       `${import.meta.env.VITE_API_URL}/api/shop/address/get/${userId}`
+  26      );
+
+  35      const response = await axios.put(
+  36:       `${import.meta.env.VITE_API_URL}/api/shop/address/update/${userId}/${addressId}`,
+  37        formData
+
+  47      const response = await axios.delete(
+  48:       `${import.meta.env.VITE_API_URL}/api/shop/address/delete/${userId}/${addressId}`
+  49      );
+
+client\src\store\shop\cart-slice\index.js:
+  12      const response = await axios.post(
+  13:       `${import.meta.env.VITE_API_URL}/api/shop/cart/add`,
+  14        {
+
+  28      const response = await axios.get(
+  29:       `${import.meta.env.VITE_API_URL}/api/shop/cart/get/${userId}`
+  30      );
+
+  39      const response = await axios.delete(
+  40:       `${import.meta.env.VITE_API_URL}/api/shop/cart/${userId}/${productId}`
+  41      );
+
+  50      const response = await axios.put(
+  51:       `${import.meta.env.VITE_API_URL}/api/shop/cart/update-cart`,
+  52        {
+
+client\src\store\shop\order-slice\index.js:
+  15      const response = await axios.post(
+  16:       `${import.meta.env.VITE_API_URL}/api/shop/order/create`,
+  17        orderData
+
+  27      const response = await axios.post(
+  28:       `${import.meta.env.VITE_API_URL}/api/shop/order/capture`,
+  29        {
+
+  43      const response = await axios.get(
+  44:       `${import.meta.env.VITE_API_URL}/api/shop/order/list/${userId}`
+  45      );
+
+  54      const response = await axios.get(
+  55:       `${import.meta.env.VITE_API_URL}/api/shop/order/details/${id}`
+  56      );
+
+client\src\store\shop\products-slice\index.js:
+  20      const result = await axios.get(
+  21:       `${import.meta.env.VITE_API_URL}/api/shop/products/get?${query}`
+  22      );
+
+  33      const result = await axios.get(
+  34:       `${import.meta.env.VITE_API_URL}/api/shop/products/get/${id}`
+  35      );
+
+client\src\store\shop\review-slice\index.js:
+  12      const response = await axios.post(
+  13:       `${import.meta.env.VITE_API_URL}/api/shop/review/add`,
+  14        formdata
+
+  22    const response = await axios.get(
+  23:     `${import.meta.env.VITE_API_URL}/api/shop/review/${id}`
+  24    );
+
+client\src\store\shop\search-slice\index.js:
+  12      const response = await axios.get(
+  13:       `${import.meta.env.VITE_API_URL}/api/shop/search/${keyword}`
+  14      );
