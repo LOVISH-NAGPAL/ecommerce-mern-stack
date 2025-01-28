@@ -30,13 +30,18 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const token=JSON.parse(sessionStorage.getItem('token'))
-    dispatch(checkAuth(token));
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      dispatch(checkAuth(JSON.parse(token)));  // Dispatch checkAuth only if token exists
+    } else {
+      dispatch(checkAuth(null));  // Optionally dispatch null or handle unauthenticated state
+    }
   }, [dispatch]);
+  
 
   if (isLoading) return <Skeleton className="w-[800] bg-black h-[600px]" />;
 
-  console.log(isLoading, user);
+  
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">

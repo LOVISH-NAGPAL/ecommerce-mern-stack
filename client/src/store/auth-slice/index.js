@@ -75,24 +75,28 @@ export const logoutUser = createAsyncThunk(
 //   }
 // );
 export const checkAuth = createAsyncThunk(
-    "/auth/checkauth",
-  
-    async (token) => {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/auth/check-auth`,
-        {
-          withCredentials: true,
-          headers: {
-            Authorization:`Bearer ${token}`,
-            "Cache-Control":
-              "no-store, no-cache, must-revalidate, proxy-revalidate",
-          },
-        }
-      );
-  
-      return response.data;
+  "/auth/checkauth",
+
+  async (token) => {
+    if (!token) {
+      throw new Error('No token found');  // Handle the case where the token is missing
     }
-  );
+
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL}/api/auth/check-auth`,
+      {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${token}`,  // Ensure the token is correctly passed
+          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+        },
+      }
+    );
+
+    return response.data;
+  }
+);
+
   
 const authSlice = createSlice({
   name: "auth",
